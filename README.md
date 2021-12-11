@@ -18,6 +18,11 @@ TODO:
 - interactive terminal / `:GoRun`
 - bugfixies
 
+# Screenshots
+Some key functions in action are displayed here:
+![main](https://user-images.githubusercontent.com/350218/145688949-9f1b431b-2719-4cb2-88de-c89417017130.png)
+
+
 # Before you begin
 Configure font rendering in your system and select good monospace font for nvim. Rendered text must be:
 - crisp (minimal blur edges)
@@ -28,6 +33,7 @@ This will provide you with a foundation to work comfortably.
 Personally I achive this goals with:
 - `neovide` gui frontend for nvim (uses custom opengl font rendering engine).
 - `guifont=Liberation\ Mono:h9.3` (must be installed in system, check with `fc-list : family style | grep -i liberation`)
+- `nerd-fonts-noto-sans-mono` must be installed in Arch for cool utf symbols inside nvim.
 
 Below all `nvim` commands are alias for `neovide`.
 
