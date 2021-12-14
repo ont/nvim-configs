@@ -62,9 +62,9 @@ opt.hidden      = true    -- allow unsaved changes for buffers
 opt.undofile    = true    -- do undo files
 opt.writebackup = false   -- do backups
 opt.swapfile    = false   -- disable swap files
-opt.undodir   = '~/.local/share/nvim/undo/'
-opt.backupdir = '~/.local/share/nvim/backup/'
-opt.directory = '~/.local/share/nvim/swap/'
+opt.undodir   = os.getenv("HOME") .. '/.local/share/nvim/undo/'
+opt.backupdir = os.getenv("HOME") .. '/.local/share/nvim/backup/'
+opt.directory = os.getenv("HOME") .. '/.local/share/nvim/swap/'
 
 
 -----------------------------------------------------------
