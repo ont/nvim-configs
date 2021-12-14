@@ -62,7 +62,7 @@ map('n', '<c-p>', [[<cmd>lua require('telescope.builtin').buffers()<cr>]], defau
 -- <F5> file browser
 map('n', '<F5>', ':NvimTreeRefresh<CR>:NvimTreeFindFileToggle<CR>', default_opts)
 -- open tree related to current file
-map('n', '<S-F5>', ':sp %:h<CR>', default_opts)
+map('n', '<S-F5>', ':NvimTreeRefresh<CR>:NvimTreeFindFile<CR>', default_opts)
 
 -- <F8> tree of classes/methods/properties (majutsushi/tagbar)
 map('n', '<F8>', ':TagbarToggle<CR>', default_opts)
