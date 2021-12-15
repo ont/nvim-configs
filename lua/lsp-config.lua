@@ -118,7 +118,7 @@ cmp.setup({
 -- Setup all LSP servers
 -----------------------------------------------------------
 -- NOTE: install pyright with `npm i -g pyright`
-local servers = { 'gopls', 'zk', 'pyright' }
+local servers = { 'gopls', 'zk', 'pyright', 'phpactor' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
     on_attach = on_attach,

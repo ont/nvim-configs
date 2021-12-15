@@ -41,8 +41,9 @@ Below all `nvim` commands are alias for `neovide`.
 1. clone this repository into `~/.config/nvim` path.
 2. install packer https://github.com/wbthomason/packer.nvim#quickstart
 3. run `nvim +PackerSync`
-4. run `nvim +GoInstallBinaries`
-5. inside nvim run `:TSInstall go gomod html javascript vue` and `:TSInstall <filetype>` for each `filetype` your work with (supports tab-completions).
+4. inside nvim run `:LspInstall gopls` for installing golang LSP server and `:LspInstall phpactor` for php LSP server
+5. run `nvim +GoInstallBinaries`
+6. inside nvim run `:TSInstall go gomod html javascript vue` and `:TSInstall <filetype>` for each `filetype` your work with (supports tab-completions).
 
 # Keybindings
 
