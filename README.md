@@ -74,3 +74,10 @@ Other stuff:
 - `right arrow` - change numbering
 - `left arrow` - strip trailng spaces and save
 - `<a-y>`/`<a-p>` - alt + yand/paste from system clipboard buffer
+
+# Usefull comands
+
+- `:LspInstallInfo` - list of available LSP servers for current file. Select and install with `i` key.
+- `:GoInstallBinaries` - install all needed golang tools
+- `:TSInstall` - install TreeSitter lang modules
+- `:G` or `:Git` - run vim-fugitive (plugin for git)
