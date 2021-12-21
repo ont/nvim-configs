@@ -28,6 +28,7 @@ Configure font rendering in your system and select good monospace font for nvim.
 - crisp (minimal blur edges)
 - readable
 - not too small/large
+
 This will provide you with a foundation to work comfortably.
 
 Personally I achive this goals with:
@@ -54,7 +55,8 @@ F keys:
 
 LSP keys:
 - `gi` - go implementation
-- `gd` - LSP go to definition
+- `gd` - go to definition
+- `gr` - go to references to variable/method/etc under cursor
 - `<space>D` - go to type of object
 - `K` - show popup hint about object under cursor
 - `<space>rn` - rename word under cursor (refactoring)
