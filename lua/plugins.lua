@@ -50,6 +50,8 @@ return require('packer').startup({function()
     -- snippets plugin
     use 'L3MON4D3/LuaSnip'
     use "rafamadriz/friendly-snippets"
+    -- .editorconfig support
+    use 'editorconfig/editorconfig-vim'
 
     -----------------------------------------------------------
     -- Navigation
@@ -95,6 +97,6 @@ return require('packer').startup({function()
     -- use 'skanehira/translate.vim'
     -- use 'nvim-lua/popup.nvim'
 end,
-config = { 
+config = {
     log = { level = 'debug' }
 }})
