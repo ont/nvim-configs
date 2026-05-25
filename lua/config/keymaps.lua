@@ -20,6 +20,9 @@ map('i', '<a-p>', '<c-o>"+p', default_opts)
 -- paste current date
 map('n', '<Leader>d', [[i<c-r>=strftime('%Y-%m-%d')<cr>]], default_opts)
 
+-- save current file
+map('n', '<Leader>w', ':w<CR>', default_opts)
+
 -- next/previous for quick buffer (CTRL-Q in telescope, LSP references...)
 map('n', '<c-j>', ':cn<CR>', default_opts)
 map('n', '<c-k>', ':cp<CR>', default_opts)

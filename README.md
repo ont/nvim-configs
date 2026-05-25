@@ -1,22 +1,23 @@
 # Overview
 Nvim as IDE for golang developers (and possibly other languages supported by plugins).
 
-Main feautures:
+Main features:
 - LSP-based features
    - completions
    - hinting / linting
-   - go to definition/references/etc...
+   - go to declaration/definition/references/etc...
 - snippets
 - fuzzy completions for LSP/snippets/etc...
 - full-text grep
 - fuzzy file searching with preview (ctrl-p, fzf analogue)
 - project file tree preview
-- source file classes/methods/vars tree preview
+- Go formatting, linting, testing helpers
+- git integration
+- database UI helpers
 
 TODO:
 - delve (debugger) support
-- interactive terminal / `:GoRun`
-- bugfixies
+- bugfixes
 
 # Screenshots
 Some key functions in action are displayed here:
@@ -31,7 +32,7 @@ Configure font rendering in your system and select good monospace font for nvim.
 
 This will provide you with a foundation to work comfortably.
 
-Personally I achive this goals with:
+Personally I achieve this with:
 - `neovide` gui frontend for nvim (uses custom opengl font rendering engine).
 - `guifont=Liberation\ Mono:h9.3` (must be installed in system, check with `fc-list : family style | grep -i liberation`)
 - `nerd-fonts-noto-sans-mono` must be installed in Arch for cool utf symbols inside nvim.
@@ -40,47 +41,59 @@ Below all `nvim` commands are alias for `neovide`.
 
 # Installation
 1. clone this repository into `~/.config/nvim` path.
-2. install packer https://github.com/wbthomason/packer.nvim#quickstart
-3. run `nvim +PackerSync`
-4. inside nvim run `:LspInstall gopls` for installing golang LSP server and `:LspInstall phpactor` for php LSP server
-5. run `nvim +GoInstallBinaries`
-6. inside nvim run `:TSInstall go gomod html javascript vue` and `:TSInstall <filetype>` for each `filetype` your work with (supports tab-completions).
+2. start `nvim`; lazy.nvim will bootstrap itself and install plugins.
+3. run `:Lazy sync` if plugins were not installed automatically.
+4. run `:GoInstallBinaries` to install Go tools, including `gopls`, goimports, revive, staticcheck, and others.
+5. optionally run `:Mason` to install/manage other language servers.
+6. inside nvim run `:TSInstall go gomod html javascript vue` and `:TSInstall <filetype>` for each `filetype` you work with (supports tab-completions).
 
 # Keybindings
 
 F keys:
-- `F3` - reload nvim config files
 - `F5` - project tree
-- `F8` - source code tree
 
 LSP keys:
-- `gi` - go implementation
+- `gD` - go to declaration
 - `gd` - go to definition
+- `gt` - go to type definition
+- `gi` - go to implementation
 - `gr` - go to references to variable/method/etc under cursor
-- `<space>D` - go to type of object
-- `K` - show popup hint about object under cursor
-- `<space>rn` - rename word under cursor (refactoring)
+- `K` - show popup hint about object under cursor (Neovim LSP default)
+- `grn` - rename word under cursor (Neovim LSP default)
+- `gO` - document symbols (Neovim LSP default)
+- insert-mode `<C-S>` - signature help (Neovim LSP default)
+
+Diagnostics:
+- `ge` - next diagnostic and open diagnostic popup
+- `gE` - previous diagnostic and open diagnostic popup
+
+Diagnostics are available through signs, underlines, and diagnostic floats.
+Use `ge` / `gE` to jump between diagnostics and open the diagnostic popup.
 
 Autocomplete keys:
 - `<c-space>` - force autocomplete
 - `<c-e>` - cancel autocomplete
-- `<c-b>`, `<c-f>` - scroll docs
+- `<c-n>`, `<c-p>` / `up`, `down` - select next/previous item
 - `<cr>` - confirm autocomplete
 
 Fuzzy searching / navigation:
 - `<c-t>` - find files in project dir
 - `<c-p>` - find opened buffer
-- `<c-h>`/`<c-l>` - prev/next buffer (ctrl + vim-style left-right)
+- `<space>g` - grep word under cursor
+- `<space>G` - live grep
+- `<c-j>`/`<c-k>` - next/previous quickfix entry
 
 Other stuff:
 - `<space>w` - write current file
-- `right arrow` - change numbering
-- `left arrow` - strip trailng spaces and save
-- `<a-y>`/`<a-p>` - alt + yand/paste from system clipboard buffer
+- `<space>d` - paste current date
+- `<space>p` - project tree
+- `<a-y>`/`<a-p>` - alt + yank/paste from system clipboard buffer
 
-# Usefull comands
+# Useful commands
 
-- `:LspInstallInfo` - list of available LSP servers for current file. Select and install with `i` key.
-- `:GoInstallBinaries` - install all needed golang tools
+- `:Lazy` - plugin manager UI
+- `:Mason` - external tools and language servers manager
+- `:GoInstallBinaries` - install Go tools used by nvim-go
+- `:GoFormat` - format Go files
 - `:TSInstall` - install TreeSitter lang modules
 - `:G` or `:Git` - run vim-fugitive (plugin for git)
